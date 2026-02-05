@@ -31,10 +31,6 @@ export default function handler(req, res) {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        .content {
-            max-width: 600px;
-            margin:50px 100px 50px 100px;
-        }
         .image-container {
             position: relative;
             width: 100%;
