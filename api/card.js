@@ -34,6 +34,7 @@ export default function handler(req, res) {
         .image-container {
             position: relative;
             width: 100%;
+            max-height: 80vh;
         }
         .caption {
             text-align: left;
