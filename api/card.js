@@ -27,43 +27,49 @@ export default function handler(req, res) {
       <meta property="og:image" content="${image}" />
       
       <style>
-        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .embed-container { 
-            border: 1px solid #e0e0e0; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            max-width: 100%;
-            background: #fff;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
-        .image-wrapper { width: 100%; background: #f4f4f4; }
-        .main-img { width: 100%; display: block; }
-        .metadata { padding: 12px 15px; background: #fafafa; border-top: 1px solid #eee; }
-        .desc { margin: 0 0 8px; font-size: 14px; color: #333; line-height: 1.4; }
-        .footer { font-size: 12px; color: #888; display: flex; justify-content: space-between; }
-        .author { font-weight: 600; color: #555; }
-        .license { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
-      </style>
+        .content {
+            max-width: 600px;
+            margin:50px 100px 50px 100px;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+        }
+        .caption {
+            text-align: left;
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+        dondo {
+            color: red;
+            font-size: 16px;
+            margin: 0 5px 0 5px;
+        }
+        author {
+            font-style: italic;
+            color: #888;
+        }
+    </style>
     </head>
-    <body>
-      <div class="embed-container">
-        <div class="image-wrapper">
-            <a href="${image}" target="_blank">
-                <img src="${image}" class="main-img" alt="${desc}" />
-            </a>
-        </div>
-        <div class="metadata">
-            <p class="desc">${desc}</p>
-            <div class="footer">
-                <span class="author">📷 ${item.author}</span>
-                <span class="date">📅 ${date}</span>
-                <span class="license">${license}</span>
+      <body>
+        <div class="content">
+            <div class="image-container">
+                <img src="${image}" alt="${desc}" style="width:100%; height:auto;">
+            </div>
+            <div class="caption">
+                ${desc} <dondo>।</dondo> <author>Photo by ${item.author}, ${date}; ${license}</author>
             </div>
         </div>
-      </div>
-    </body>
+      </body>
     </html>
   `;
 
   res.setHeader('Content-Type', 'text/html');
   res.status(200).send(htmlContent);
 }
+
