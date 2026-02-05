@@ -12,6 +12,7 @@ export default function handler(req, res) {
   const title = `Photo by ${item.author}`;
   const desc = item.description;
   const image = item.imageUrl;
+  const date = item.date;
   const license = item.license;
 
   const htmlContent = `
@@ -54,6 +55,7 @@ export default function handler(req, res) {
             <p class="desc">${desc}</p>
             <div class="footer">
                 <span class="author">📷 ${item.author}</span>
+                <span class="date">📅 ${date}</span>
                 <span class="license">${license}</span>
             </div>
         </div>
