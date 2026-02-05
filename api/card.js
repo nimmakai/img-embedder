@@ -39,7 +39,7 @@ export default function handler(req, res) {
             text-align: left;
             font-size: 14px;
             color: #555;
-            margin-top: 5px;
+            padding: 5px;
         }
         dondo {
             color: red;
