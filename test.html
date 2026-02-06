@@ -1,27 +1,22 @@
 <html>
 <head>
-    <style>
-        button {
-            background-color: #f0f0f0;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button.active {
-            background-color: #8e8e8e;
-            color: white;
-        }
-    </style>
+    <title>Image Embedding Test</title>
+    <style>button {background-color: #f0f0f0; border: none; padding: 10px 20px; margin: 10px; cursor: pointer; font-size: 16px;} button.active {background-color: #8e8e8e; color: white;}</style>
 </head>
-<body style="background:white">
+<body style="background:white;">
 
-<button onclick="showIframe('Colors_of_Bishwa_Ijtema.jpg', this)">Image 1</button>
-<button onclick="showIframe('Inukshuk_Park_05.jpg', this)">Image 2</button>
+<div style="text-align:center;">
+    <button onclick="showIframe('Colors_of_Bishwa_Ijtema.jpg', this)">Image 1</button>
+    <button onclick="showIframe('Inukshuk_Park_05.jpg', this)">Image 2</button>
+</div>
 
-<div id="iframeContainer">
-    <iframe id="imageIframe" src="https://img-embedder.vercel.app/api/card?id=Colors_of_Bishwa_Ijtema.jpg" width="50%" height="1200px" frameborder="0" scrolling="no"></iframe>
+<div id="iframeContainer" style="display:flex; justify-content:center;">
+    <iframe id="imageIframe" 
+    src="https://img-embedder.vercel.app/api/card?id=Colors_of_Bishwa_Ijtema.jpg"
+    width="50%"
+    height="1200px"
+    frameborder="0"
+    scrolling="no"></iframe>
 </div>
 
 <script>
